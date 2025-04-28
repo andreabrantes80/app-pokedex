@@ -4,6 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Consumo de API pública 
 "Explore o mundo dos Pokémons com o AppPokedex: um aplicativo rápido e intuitivo para busca com filtros personalizados, utilizando dados atualizados de APIs públicas."
+![Alt Text](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png)
 
 ## Code scaffolding
 
