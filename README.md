@@ -3,7 +3,11 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.16.
 
 ## Consumo de API pública 
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur" style="vertical-align: middle; margin-right: 10px;"> Explore o mundo dos Pokémons com o AppPokedex: um aplicativo rápido e intuitivo para busca com filtros personalizados, utilizando dados atualizados de APIs públicas.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur">
+</p>
+
+Explore o mundo dos Pokémons com o AppPokedex: um aplicativo rápido e intuitivo para busca com filtros personalizados, utilizando dados atualizados de APIs públicas.
 
 
 ## Code scaffolding
