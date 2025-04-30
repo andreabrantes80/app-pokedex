@@ -1,34 +1,24 @@
-<a class="pokemon">
-  <section class="pokemon_status">
-      <h2>
-        Bubasaur
-    </h2>
+<poke-search (emmitSearch)="getSearch($event)"></poke-search>
 
-    <ul>
-        <li>Grass</li>
-        <li>Poison</li>
-    </ul>
-  </section>
+<section class="listagem">
+  <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
+    <a [routerLink]="['details', pokemon.status.id]"  class="pokemon" *ngIf="pokemon.status">
+      <section class="pokemon_status">
+        <h2>{{pokemon.name}}</h2>
 
-  <section class="pokemon_img">
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur" />
+        <ul>
+          <li *ngFor="let value of pokemon.status.types" >{{value.type.name}}</li>
 
-  </section>
-</a>
-<a class="pokemon">
-  <section class="pokemon_status">
-      <h2>
-        Bubasaur
-    </h2>
+        </ul>
+      </section>
 
-    <ul>
-        <li>Grass</li>
-        <li>Poison</li>
-    </ul>
-  </section>
+      <section class="pokemon_img">
+        <img
+          [src]="pokemon.status.sprites.other.dream_world.front_default"
+          [alt]="pokemon.name"
+        />
+      </section>
+    </a>
+  </ng-template>
 
-  <section class="pokemon_img">
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur" />
-
-  </section>
-</a>
+</section>
