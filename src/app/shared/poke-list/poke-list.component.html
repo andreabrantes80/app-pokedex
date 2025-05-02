@@ -2,13 +2,18 @@
 
 <section class="listagem">
   <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
-    <a [routerLink]="['details', pokemon.status.id]"  class="pokemon" *ngIf="pokemon.status">
+    <a
+      [routerLink]="['details', pokemon.status.id]"
+      class="pokemon"
+      *ngIf="pokemon.status"
+    >
       <section class="pokemon_status">
-        <h2>{{pokemon.name}}</h2>
+        <h2>{{ pokemon.name }}</h2>
 
         <ul>
-          <li *ngFor="let value of pokemon.status.types" >{{value.type.name}}</li>
-
+          <li *ngFor="let value of pokemon.status.types">
+            {{ value.type.name }}
+          </li>
         </ul>
       </section>
 
@@ -20,5 +25,10 @@
       </section>
     </a>
   </ng-template>
-
 </section>
+<img
+  src="assets/error.png"
+  alt="Deu erro na mostragem do pokemon"
+  width="100%"
+  *ngIf="apiError"
+>

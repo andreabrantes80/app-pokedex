@@ -1,10 +1,14 @@
 @import "../../../config-scss/rem-calc.scss";
 
+$padding: rem-calc(20);
+
 :host {
   .listagem {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    padding: $padding 0;
 
     .pokemon {
       display: flex;
@@ -13,7 +17,7 @@
       background: var(--branco);
       border-radius: rem-calc(10);
       margin-bottom: rem-calc(10);
-      padding: rem-calc(20);
+      padding: $padding;
       height: rem-calc(157 - 40);
 
       text-decoration: none;
@@ -51,8 +55,8 @@
         align-items: center;
         justify-content: center;
         position: absolute;
-        bottom: rem-calc(20);
-        right: rem-calc(20);
+        bottom:$padding;
+        right: $padding;
         width: rem-calc(110);
         height: rem-calc(90);
 
@@ -63,5 +67,10 @@
         }
       }
     }
+    @media (max-width: 400px) {
+			a {
+				width: 100% !important;
+			}
+		}
   }
 }
