@@ -9,8 +9,8 @@ import { forkJoin } from 'rxjs';
   styleUrl: './details.component.scss',
 })
 export class DetailsComponent implements OnInit {
-  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon/';
-  private urlName: string = 'https://pokeapi.co/api/v2/pokemon-species/';
+  private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon';
+  private urlName: string = 'https://pokeapi.co/api/v2/pokemon-species';
 
   public pokemon: any;
   public isLoading: boolean = false;
@@ -22,17 +22,17 @@ export class DetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getPokemon;
+    this.getPokemon();
   }
 
-  get getPokemon() {
+  public getPokemon() {
     const id = this.activateRoute.snapshot.params['id'];
     const pokemon = this.pokeApiService.apiGetPokemons(
       `${this.urlPokemon}/${id}`
     );
     const name = this.pokeApiService.apiGetPokemons(`${this.urlName}/${id}`);
 
-    return forkJoin([pokemon, name]).subscribe((res) => {
+    return forkJoin([pokemon, name]).subscribe(res => {
       this.pokemon = res;
       this.isLoading = true;
     },

@@ -19,6 +19,7 @@ export class PokeListComponent implements OnInit {
     this.pokeApi.apiListAllPokemons.subscribe(res => {
       this.setAllPokemons = res.results;
       this.getAllPokemons = this.setAllPokemons;
+
     },
       error => {
         this.apiError = true;
@@ -28,17 +29,22 @@ export class PokeListComponent implements OnInit {
   }
 
   public getSearch(value: string): void {
-    if (!value.trim()) {
-      // Se o valor estiver vazio, mostre todos os Pokémon novamente.
-      this.getAllPokemons = this.setAllPokemons;
-      return;
-    }
+    //   if (!value.trim()) {
+    //     // Se o valor estiver vazio, mostre todos os Pokémon novamente.
+    //     this.getAllPokemons = this.setAllPokemons;
+    //     return;
+    //   }
 
-    const filter = this.setAllPokemons.filter((res: any) => {
-      return !res.name.indexOf(value.toLowerCase()) ? res : false;
-    });
-    // this.getAllPokemons = filter;
-    this.getAllPokemons = filter.length > 0 ? filter : this.setAllPokemons;
-    console.log(this.getAllPokemons); // Verifique o resultado filtrado
+      const filter = this.setAllPokemons.filter((res: any) => {
+        return !res.name.indexOf(value.toLowerCase()) ? res : false;
+      });
+      this.getAllPokemons = filter.length > 0 ? filter : this.setAllPokemons;
+      console.log(this.getAllPokemons); // Verifique o resultado filtrado
+
+    // const filter = this.setAllPokemons.filter((res: any) => {
+    //   return !res.name.indexOf(value.toLowerCase());
+    // });
+
+     this.getAllPokemons = filter;
   }
 }
